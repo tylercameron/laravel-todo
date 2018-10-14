@@ -14,11 +14,6 @@ class TasksController extends Controller
         return view('tasks.index', compact('tasks'));
     }
 
-    // public function show()
-    // {
-
-    // }
-
     public function create()
     {
         return view('tasks.create');
@@ -39,17 +34,24 @@ class TasksController extends Controller
         
         // below ::create is the same as doing 3 lines above
         Task::create([
-            'body'
+            'body' => request('body')
         ]);
  
         return redirect('/');
     }
 
-    public function edit(Task $task)
+    public function update(Task $task)
     {
         $task->completed = !$task->completed;
 
         $task->save();
+        
+        return redirect('/');
+    }
+    
+    public function destroy(Task $task)
+    {
+        $task->delete();
         
         return redirect('/');
     }

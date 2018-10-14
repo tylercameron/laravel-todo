@@ -20,6 +20,12 @@
                     @csrf
                     <button type="submit">TICK</button>
                 </form>
+
+                <form action="/tasks/{{ $task->id }}/delete" method="post">
+                    @method('DELETE') 
+                    @csrf
+                    <button type="submit">X</button>
+                </form>
                 {{-- <form action="DELETE" ></form>
                 <button type="submit"></button> --}}
             </li>
