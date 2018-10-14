@@ -18,7 +18,7 @@
                 <form action="/tasks/{{ $task->id }}/edit" method="post">
                     @method('PUT') 
                     @csrf
-                    <button type="submit">TICK</button>
+                    <button type="submit">TICK</button>                    
                 </form>
 
                 <form action="/tasks/{{ $task->id }}/delete" method="post">
@@ -26,8 +26,7 @@
                     @csrf
                     <button type="submit">X</button>
                 </form>
-                {{-- <form action="DELETE" ></form>
-                <button type="submit"></button> --}}
+
             </li>
         @endforeach
 
